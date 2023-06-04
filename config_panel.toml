@@ -1,7 +1,7 @@
 version="1.0"
 [main]
-name.en = "Configuration for $app"
-name.id = "Konfigurasi untuk $app"
+name.en = "Configuration for SimplyTranslate"
+name.id = "Konfigurasi untuk SimplyTranslate"
 services = ["__APP__"]
     [main.engine]
     name.en = "Translation Engine"
