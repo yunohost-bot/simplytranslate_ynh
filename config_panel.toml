@@ -1,0 +1,57 @@
+version="1.0"
+[main]
+name.en = "Configuration for $app"
+name.id = "Konfigurasi untuk $app"
+services = ["__APP__"]
+    [main.engine]
+    name.en = "Translation Engine"
+    name.id = "Mesin Penerjemahan"
+        [main.engine.google_enable]
+        ask.en = "Enable Google Translate?"
+        ask.id = "Aktifkan Google Translate?"
+        type = "boolean"
+        yes = true
+        no = false
+
+        [main.engine.reverso_enable]
+        ask.en = "Enable Reverso?"
+        ask.id = "Aktifkan Reverso?"
+        type = "boolean"
+        yes = true
+        no = false
+
+        [main.engine.iciba_enable]
+        ask.en = "Enable ICIBA?"
+        ask.id = "Aktifkan ICIBA?"
+        type = "boolean"
+        yes = true
+        no = false
+
+        [main.engine.deepl_enable]
+        ask.en = "Enable DeepL?"
+        ask.id = "Aktifkan DeepL?"
+        type = "boolean"
+        yes = true
+        no = false
+        help.en = "Deepl Translate does not support async as of right now, it will block all other requests while it's processing a Deepl Requests, please enable this with caution!"
+
+        [main.engine.libretranslate_enable]
+        ask.en = "Enable LibreTranslate?"
+        ask.id = "Aktifkan LibreTranslate?"
+        type = "boolean"
+        yes = true
+        no = false
+
+        [main.engine.libretranslate_instance]
+        ask.en = "From which LibreTranslate instance?"
+        ask.id = "Dari LibreTranslate mana?"
+        type = "string"
+        help.en = "If you disable LibreTranslate, just leave this blank. Required if you enable LibreTranslate."
+        help.id = "Jika LibreTranslate tidak dipilih, biarkan ini kosong. Dibutuhkan jika LibreTranslate diaktifkan."
+
+        [main.engine.libretranslate_api]
+        ask.en = "API key for LibreTranslate:"
+        ask.id = "Kunci API untuk LibreTranslate:"
+        type = "string"
+        help.en = "If you disable LibreTranslate or your instance didn't need API key, just leave this blank."
+        help.id = "Jika LibreTranslate tidak dipilih atau LibreTranslate pilihanmu tidak memerlukan ini, biarkan ini kosong."
