@@ -1,0 +1,107 @@
+#!/bin/bash
+
+#=================================================
+# GENERIC START
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression --message="Setting up source files..." --weight=1
+
+ynh_setup_source --dest_dir="$install_dir/simplytranslate"
+
+chown -R $app:www-data "$install_dir"
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+
+ynh_add_nginx_config
+
+ynh_add_systemd_config
+
+yunohost service add $app --description="Web interface for SimplyTranslate" --log="/var/log/$app/$app.log"
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+# some default config
+ynh_app_setting_set -a $app -k libretranslate_enable -v false
+ynh_app_setting_set -a $app -k libretranslate_instance -v ""
+ynh_app_setting_set -a $app -k libretranslate_api -v ""
+ynh_app_setting_set -a $app -k google_enable -v true
+ynh_app_setting_set -a $app -k deepl_enable -v false
+ynh_app_setting_set -a $app -k reverso_enable -v false
+ynh_app_setting_set -a $app -k iciba_enable -v false
+
+# load the above config
+libretranslate_enable=$(ynh_app_setting_get -a $app -k libretranslate_enable)
+libretranslate_instance=$(ynh_app_setting_get -a $app -k libretranslate_instance)
+libretranslate_api=$(ynh_app_setting_get -a $app -k libretranslate_api)
+google_enable=$(ynh_app_setting_get -a $app -k google_enable)
+deepl_enable=$(ynh_app_setting_get -a $app -k deepl_enable)
+iciba_enable=$(ynh_app_setting_get -a $app -k iciba_enable)
+reverso_enable=$(ynh_app_setting_get -a $app -k reverso_enable)
+
+ynh_add_config --template="config.conf.template" --destination="$install_dir/simplytranslate/config.conf"
+
+chmod 400 "$install_dir/simplytranslate/config.conf"
+chown $app:$app "$install_dir/simplytranslate/config.conf"
+
+#=================================================
+# CONFIGURATION FOR SUBPATH
+#=================================================
+
+if [ "$path" = "/" ]; then
+	st_path=""
+else
+	st_path=$path
+fi
+
+ynh_replace_string -m "\"/?engine" -r "\"$st_path/?engine" -f "$install_dir/simplytranslate/templates/index.html"
+ynh_replace_string -m "/prefs" -r "$st_path/prefs" -f "$install_dir/simplytranslate/templates/index.html"
+ynh_replace_string -m "\"/\"" -r "\"$st_path/\"" -f "$install_dir/simplytranslate/templates/prefs.html"
+ynh_replace_string -m "/prefs" -r "$st_path/prefs" -f "$install_dir/simplytranslate/templates/prefs.html"
+ynh_replace_string -m "/api" -r "$st_path/api" -f "$install_dir/simplytranslate/main.py"
+ynh_replace_string -m "/prefs" -r "$st_path/prefs" -f "$install_dir/simplytranslate/main.py"
+ynh_replace_string -m "/switchlanguages" -r "$st_path/switchlanguages" -f "$install_dir/simplytranslate/main.py"
+ynh_replace_string -m "f\"/?" -r "f\"$st_path/?" -f "$install_dir/simplytranslate/main.py"
+ynh_replace_string -m "\"/\"" -r "\"$st_path/\"" -f "$install_dir/simplytranslate/main.py"
+
+#=================================================
+# BUILD THE APP
+#=================================================
+ynh_script_progression --message="Building the app..." --weight=1
+
+mkdir "$install_dir/venv"
+python3 -m venv "$install_dir/venv"
+"$install_dir/venv/bin/python3" -m pip install -r "$install_dir/simplytranslate/requirements.txt"
+
+chown -R $app:$app "$install_dir/venv"
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=1
+
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+ynh_script_progression --message="Installation of $app completed" --last

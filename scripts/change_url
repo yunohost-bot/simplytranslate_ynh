@@ -1,0 +1,71 @@
+#!/bin/bash
+
+#=================================================
+# GENERIC STARTING
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# STANDARD MODIFICATIONS
+#=================================================
+# STOP SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Stopping a systemd service..." --weight=1
+
+ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
+
+#=================================================
+# MODIFY URL IN NGINX CONF
+#=================================================
+ynh_script_progression --message="Updating NGINX web server configuration..." --weight=1
+
+ynh_change_url_nginx_config
+
+#=================================================
+# SPECIFIC MODIFICATIONS
+#=================================================
+# CONFIGURATION FOR SUBPATH
+#=================================================
+
+if [ $change_path -eq 1 ]
+then
+	if [ "$old_path" = "/" ]; then
+		old_st_path=""
+	else
+		old_st_path=$old_path
+	fi
+
+	if [ "$new_path" = "/" ]; then
+		new_st_path=""
+	else
+		new_st_path=$new_path
+	fi
+
+    ynh_replace_string -m "\"$old_st_path/?engine" -r "\"$new_st_path/?engine" -f "$install_dir/simplytranslate/templates/index.html"
+    ynh_replace_string -m "$old_st_path/prefs" -r "$new_st_path/prefs" -f "$install_dir/simplytranslate/templates/index.html"
+    ynh_replace_string -m "\"$old_st_path/\"" -r "\"$new_st_path/\"" -f "$install_dir/simplytranslate/templates/prefs.html"
+    ynh_replace_string -m "$old_st_path/prefs" -r "$new_st_path/prefs" -f "$install_dir/simplytranslate/templates/prefs.html"
+    ynh_replace_string -m "$old_st_path/api" -r "$new_st_path/api" -f "$install_dir/simplytranslate/main.py"
+    ynh_replace_string -m "$old_st_path/prefs" -r "$new_st_path/prefs" -f "$install_dir/simplytranslate/main.py"
+    ynh_replace_string -m "$old_st_path/switchlanguages" -r "$new_st_path/switchlanguages" -f "$install_dir/simplytranslate/main.py"
+    ynh_replace_string -m "f\"$old_st_path/?" -r "f\"$new_st_path/?" -f "$install_dir/simplytranslate/main.py"
+    ynh_replace_string -m "\"$old_st_path/\"" -r "\"$new_st_path/\"" -f "$install_dir/simplytranslate/main.py"
+fi
+#=================================================
+# GENERIC FINALISATION
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=1
+
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression --message="Change of URL completed for $app" --last
