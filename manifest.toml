@@ -5,7 +5,7 @@ name = "Simply Translate"
 description.en = "Web interface for many translation engine: DeepL, Reverso, ICIBA, Google Translate, and LibreTranslate."
 description.id = "Antarmuka web mesin penerjemahan: DeepL; Reverso; ICIBA; Google Translate; dan LibreTranslate."
 
-version = "2023.4.9~ynh1"
+version = "2023.4.9~ynh2"
 
 maintainers = ["the7thNightmare"]
 
