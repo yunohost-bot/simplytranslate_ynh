@@ -47,6 +47,7 @@ then
 
     ynh_replace_string -m "\"$old_st_path/?engine" -r "\"$new_st_path/?engine" -f "$install_dir/simplytranslate/templates/index.html"
     ynh_replace_string -m "$old_st_path/prefs" -r "$new_st_path/prefs" -f "$install_dir/simplytranslate/templates/index.html"
+    ynh_replace_string -m "$old_st_path/switchlanguages" -r "$new_st_path/switchlanguages" -f "$install_dir/simplytranslate/templates/index.html"
     ynh_replace_string -m "\"$old_st_path/\"" -r "\"$new_st_path/\"" -f "$install_dir/simplytranslate/templates/prefs.html"
     ynh_replace_string -m "$old_st_path/prefs" -r "$new_st_path/prefs" -f "$install_dir/simplytranslate/templates/prefs.html"
     ynh_replace_string -m "$old_st_path/api" -r "$new_st_path/api" -f "$install_dir/simplytranslate/main.py"
