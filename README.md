@@ -24,6 +24,10 @@ The frontend for SimplyTranslate engine, which you can use for translation for m
 
 ![Screenshot of Simply Translate](./doc/screenshots/st_id-en.png)
 
+## :red_circle: Antifeatures
+
+- **Non-free Network Services**: Promotes or depends entirely on a non-free network service.
+
 ## Documentation and resources
 
 * Official app website: <https://simple-web.org/projects/simplytranslate.html>
