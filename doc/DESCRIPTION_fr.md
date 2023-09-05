@@ -1,0 +1,1 @@
+L'interface du moteur SimplyTranslate, que vous pouvez utiliser pour la traduction de nombreux moteurs de traduction, comprend les moteurs DeepL, Reverso, ICIBA, Google Translate et LibreTranslate (dont l'instance de récupération de LibreTranslate peut être configurée).

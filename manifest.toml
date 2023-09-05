@@ -2,8 +2,9 @@ packaging_format = 2
 
 id = "simplytranslate"
 name = "Simply Translate"
-description.en = "Web interface for many translation engine: DeepL, Reverso, ICIBA, Google Translate, and LibreTranslate."
-description.id = "Antarmuka web mesin penerjemahan: DeepL; Reverso; ICIBA; Google Translate; dan LibreTranslate."
+description.en = "Web interface for many translation engine"
+description.fr = "Interface Web pour de nombreux moteurs de traduction"
+description.id = "Antarmuka web mesin penerjemahan"
 
 version = "2023.4.9~ynh2"
 
@@ -15,7 +16,7 @@ website = "https://simple-web.org/projects/simplytranslate.html"
 code = "https://codeberg.org/SimpleWeb/SimplyTranslate-Web"
 
 [integration]
-yunohost = ">= 11.1.19"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
