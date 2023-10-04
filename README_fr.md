@@ -32,7 +32,6 @@ The frontend for SimplyTranslate engine, which you can use for translation for m
 
 * Site officiel de l’app : <https://simple-web.org/projects/simplytranslate.html>
 * Dépôt de code officiel de l’app : <https://codeberg.org/SimpleWeb/SimplyTranslate-Web>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_simplytranslate>
 * Signaler un bug : <https://github.com/YunoHost-Apps/simplytranslate_ynh/issues>
 
 ## Informations pour les développeurs
