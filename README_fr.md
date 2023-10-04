@@ -32,7 +32,6 @@ L'interface du moteur SimplyTranslate, que vous pouvez utiliser pour la traducti
 
 * Site officiel de l’app : <https://simple-web.org/projects/simplytranslate.html>
 * Dépôt de code officiel de l’app : <https://codeberg.org/SimpleWeb/SimplyTranslate-Web>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_simplytranslate>
 * Signaler un bug : <https://github.com/YunoHost-Apps/simplytranslate_ynh/issues>
 
 ## Informations pour les développeurs
