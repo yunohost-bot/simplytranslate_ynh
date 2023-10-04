@@ -53,5 +53,5 @@ services = ["__APP__"]
         ask.en = "API key for LibreTranslate:"
         ask.id = "Kunci API untuk LibreTranslate:"
         type = "string"
-        help.en = "If you disable LibreTranslate or your instance didn't need API key, just leave this blank."
+        help.en = "If you disable LibreTranslate or your instance didn't need an API key, just leave this blank."
         help.id = "Jika LibreTranslate tidak dipilih atau LibreTranslate pilihanmu tidak memerlukan ini, biarkan ini kosong."

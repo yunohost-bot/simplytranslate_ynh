@@ -16,9 +16,9 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-The frontend for SimplyTranslate engine, which you can use for translation for many translation engine, there are DeepL, Reverso, ICIBA, Google Translate, and LibreTranslate (which instance LibreTranslate fetch from can be configured) engine.
+L'interface du moteur SimplyTranslate, que vous pouvez utiliser pour la traduction de nombreux moteurs de traduction, comprend les moteurs DeepL, Reverso, ICIBA, Google Translate et LibreTranslate (dont l'instance de récupération de LibreTranslate peut être configurée).
 
-**Version incluse :** 2023.4.9~ynh1
+**Version incluse :** 2023.4.9~ynh2
 
 ## Captures d’écran
 
