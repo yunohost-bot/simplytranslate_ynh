@@ -6,7 +6,7 @@ description.en = "Web interface for many translation engine"
 description.fr = "Interface Web pour de nombreux moteurs de traduction"
 description.id = "Antarmuka web mesin penerjemahan"
 
-version = "2023.4.9~ynh2"
+version = "2023.4.9~ynh3"
 
 maintainers = ["the7thNightmare"]
 
