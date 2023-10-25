@@ -18,7 +18,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 The frontend for SimplyTranslate engine, which you can use for translation for many translation engine, there are DeepL, Reverso, ICIBA, Google Translate, and LibreTranslate (which instance LibreTranslate fetch from can be configured) engine.
 
-**Shipped version:** 2023.4.9~ynh2
+**Shipped version:** 2023.4.9~ynh3
 
 ## Screenshots
 

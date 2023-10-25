@@ -6,7 +6,7 @@ description.en = "Web interface for many translation engine"
 description.fr = "Interface Web pour de nombreux moteurs de traduction"
 description.id = "Antarmuka web mesin penerjemahan"
 
-version = "2023.4.9~ynh2"
+version = "2023.4.9~ynh3"
 
 maintainers = ["the7thNightmare"]
 
@@ -42,7 +42,7 @@ ram.runtime = "50M"
 
         [resources.sources.main]
         url = "https://codeberg.org/SimpleWeb/SimplyTranslate-Web/archive/d95fed97bf354a92d242f16529712ba59ee54eb0.tar.gz"
-        sha256 = "87360d28cb849e99184b68115bbecc4c92500cf3b940abbcb05cfd17f2f7fc86"
+        sha256 = "13ec0422cff994ee87291327143483a7ad6f0960103bc0b765c021034e0ab962"
         in_subdir = true
 
     [resources.system_user]
@@ -55,4 +55,4 @@ ram.runtime = "50M"
     [resources.ports]
 
     [resources.apt]
-    packages = "python3 python3-venv git"
+    packages = "python3, python3-venv, git"
