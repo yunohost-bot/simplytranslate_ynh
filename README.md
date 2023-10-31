@@ -32,6 +32,7 @@ The frontend for SimplyTranslate engine, which you can use for translation for m
 
 * Official app website: <https://simple-web.org/projects/simplytranslate.html>
 * Upstream app code repository: <https://codeberg.org/SimpleWeb/SimplyTranslate-Web>
+* YunoHost Store: <https://apps.yunohost.org/app/simplytranslate>
 * Report a bug: <https://github.com/YunoHost-Apps/simplytranslate_ynh/issues>
 
 ## Developer info
