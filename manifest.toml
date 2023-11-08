@@ -12,7 +12,7 @@ maintainers = ["the7thNightmare"]
 
 [upstream]
 license = "AGPL-3.0"
-website = "https://simple-web.org/projects/simplytranslate.html"
+website = "https://simplytranslate.org/"
 code = "https://codeberg.org/SimpleWeb/SimplyTranslate-Web"
 
 [integration]
