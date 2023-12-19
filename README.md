@@ -18,7 +18,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 The frontend for SimplyTranslate engine, which you can use for translation for many translation engine, there are DeepL, Reverso, ICIBA, Google Translate, and LibreTranslate (which instance LibreTranslate fetch from can be configured) engine.
 
-**Shipped version:** 2023.4.9~ynh3
+**Shipped version:** 2023.12.19~ynh1
 
 ## Screenshots
 
@@ -31,7 +31,7 @@ The frontend for SimplyTranslate engine, which you can use for translation for m
 ## Documentation and resources
 
 * Official app website: <https://simplytranslate.org/>
-* Upstream app code repository: <https://codeberg.org/SimpleWeb/SimplyTranslate-Web>
+* Upstream app code repository: <https://codeberg.org/ManeraKai/simplytranslate>
 * YunoHost Store: <https://apps.yunohost.org/app/simplytranslate>
 * Report a bug: <https://github.com/YunoHost-Apps/simplytranslate_ynh/issues>
 
