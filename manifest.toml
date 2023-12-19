@@ -6,14 +6,14 @@ description.en = "Web interface for many translation engine"
 description.fr = "Interface Web pour de nombreux moteurs de traduction"
 description.id = "Antarmuka web mesin penerjemahan"
 
-version = "2023.4.9~ynh3"
+version = "2023.12.19~ynh1"
 
 maintainers = ["the7thNightmare"]
 
 [upstream]
 license = "AGPL-3.0"
 website = "https://simplytranslate.org/"
-code = "https://codeberg.org/SimpleWeb/SimplyTranslate-Web"
+code = "https://codeberg.org/ManeraKai/simplytranslate"
 
 [integration]
 yunohost = ">= 11.2"
@@ -41,8 +41,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://codeberg.org/SimpleWeb/SimplyTranslate-Web/archive/d95fed97bf354a92d242f16529712ba59ee54eb0.tar.gz"
-        sha256 = "13ec0422cff994ee87291327143483a7ad6f0960103bc0b765c021034e0ab962"
+        url = "https://codeberg.org/ManeraKai/simplytranslate/archive/fb218989fffde85edfdde930618dd7e9c6112eb5.tar.gz"
+        sha256 = "8edb0fb413c1776f291f4c6990a944ab3e0f5dbfa2d80450a33c12b77a82cfd2"
         in_subdir = true
 
     [resources.system_user]
