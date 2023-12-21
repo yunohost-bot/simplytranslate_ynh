@@ -19,8 +19,11 @@ code = "https://codeberg.org/ManeraKai/simplytranslate"
 yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
+
 ldap = false
+
 sso = false
+
 disk = "100M"
 ram.build = "100M"
 ram.runtime = "50M"
@@ -53,6 +56,3 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.ports]
-
-    [resources.apt]
-    packages = "python3, python3-venv, git"
