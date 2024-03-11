@@ -43,7 +43,7 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
-	ynh_setup_source --dest_dir="$install_dir/simplytranslate"
+	ynh_setup_source --dest_dir="$install_dir/simplytranslate" --full_replace=1
 fi
 
 chown -R $app:www-data "$install_dir"
