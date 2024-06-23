@@ -26,7 +26,8 @@ L'interface du moteur SimplyTranslate, que vous pouvez utiliser pour la traducti
 
 ## :red_circle: Anti-fonctionnalités
 
-- **Services réseau non libres**: Promeut ou utilise des services réseau non libres.
+- **Application non maintenue **: Ce logiciel n'est plus maintenu. Attendez-vous à ce qu'il ne fonctionne plus avec le temps, et que l'on découvre des failles de sécurité qui ne seront pas corrigées, etc.
+- **Services réseau non libres **: Promeut ou utilise des services réseau non libres.
 
 ## Documentations et ressources
 

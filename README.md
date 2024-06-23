@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Simply Translate with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=simplytranslate)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install Simply Translate quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -26,6 +26,7 @@ The frontend for SimplyTranslate engine, which you can use for translation for m
 
 ## :red_circle: Antifeatures
 
+- **Upstream not maintained**: This software is not maintained anymore. Expect it to break down over time, be exposed to unfixed security breaches, etc.
 - **Non-free Network Services**: Promotes or depends entirely on a non-free network service.
 
 ## Documentation and resources

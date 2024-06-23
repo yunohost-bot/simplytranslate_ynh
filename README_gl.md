@@ -24,8 +24,9 @@ The frontend for SimplyTranslate engine, which you can use for translation for m
 
 ![Captura de pantalla de Simply Translate](./doc/screenshots/st_id-en.png)
 
-## :red_circle: Caraterísticas cuestionables
+## :red_circle: Debes considerar
 
+- **Upstream not maintained**: This software is not maintained anymore. Expect it to break down over time, be exposed to unfixed security breaches, etc.
 - **Non-free Network Services**: Promotes or depends entirely on a non-free network service.
 
 ## Documentación e recursos
